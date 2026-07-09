@@ -2,28 +2,57 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Cargando Gestión de OT...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando Sistema de Gestión...</title>
+    
+    <!-- Este script intenta la redirección de 3 formas distintas -->
+    <script type="text/javascript">
+        var urlApp = "https://script.google.com/macros/s/AKfycby-ek43fVLSelgO0IqhHbw2TfM5BKTi17Tzf-zvuN_HMfuUPi2JpIwS9RbyLXlgtgkcBA/exec";
+
+        // Método 1: Redirección inmediata (Recomendado para móviles)
+        window.location.replace(urlApp);
+
+        // Método 2: Respaldo si el anterior falla
+        setTimeout(function() {
+            window.location.href = urlApp;
+        }, 1000);
+    </script>
+
     <style>
         body { 
             background: #f1f5f9; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             display: flex; 
             justify-content: center; 
             align-items: center; 
             height: 100vh; 
-            font-family: sans-serif; 
+            margin: 0;
+            text-align: center;
         }
-        .loader { border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; width: 40px; height: 40px; animation: spin 2s linear infinite; }
+        .container { padding: 20px; }
+        .loader { 
+            border: 5px solid #e2e8f0; border-top: 5px solid #3b82f6; 
+            border-radius: 50%; width: 50px; height: 50px; 
+            animation: spin 1s linear infinite; margin: 0 auto 20px;
+        }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .btn-manual {
+            display: inline-block; padding: 12px 24px; background: #3b82f6;
+            color: white; text-decoration: none; border-radius: 8px;
+            font-weight: bold; margin-top: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
     </style>
-    <script>
-        // Redirige automáticamente a la URL de Google Apps Script saltándose el iframe
-        window.location.href = "https://script.google.com/macros/s/AKfycby-ek43fVLSelgO0IqhHbw2TfM5BKTi17Tzf-zvuN_HMfuUPi2JpIwS9RbyLXlgtgkcBA/exec";
-    </script>
 </head>
 <body>
-    <div style="text-align: center;">
+    <div class="container">
         <div class="loader"></div>
-        <p>Redirigiendo al sistema de mantenimiento...</p>
+        <h2 style="color: #1e293b;">Entrando al Sistema</h2>
+        <p style="color: #64748b;">Si no eres redirigido en 2 segundos, presiona el botón:</p>
+        
+        <!-- Botón de respaldo (Fallback) -->
+        <a href="https://script.google.com/macros/s/AKfycby-ek43fVLSelgO0IqhHbw2TfM5BKTi17Tzf-zvuN_HMfuUPi2JpIwS9RbyLXlgtgkcBA/exec" class="btn-manual">
+            ABRIR SISTEMA MANUALMENTE
+        </a>
     </div>
 </body>
 </html>
